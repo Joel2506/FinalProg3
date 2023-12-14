@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<form>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Generador de CV</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="style.css" />
+
+
+    </head>
+
+    <body>
+        <!-- aquí va el código html -->
+
+
+        <div class="container" id="cv-form">
+
+            <h1 class="text-center my-2">CV Generator</h1>
+            <p class="text-center">By Joel Javier</p>
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <!-- Primera col -->
+                    <h3>Información Personal</h3>
+
+
+
+                    <div class="form-group">
+                        <label for="nameField">Nombre:</label>
+                        <input type="text" id="nameField" placeholder="Escriba sus nombres y apellidos"
+                            class="form-control" title="Es obligatorio este campo" required>
+
+                    </div>
+
+
+                    <div class="form-group mt-2">
+                        <label for="emailField">Correo:</label>
+                        <input type="text" id="mailField" placeholder="Ej:@hotmail.com" class="form-control" required>
+
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label for="phoneField">Teléfono:</label>
+                        <input type="text" id="contactField" placeholder="Escriba su número de Teléfono"
+                            class="form-control" required>
+
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label for="langField">Idiomas:</label>
+                        <input type="text" id="langField" placeholder="Ej: ingles, español..." class="form-control"
+                            required>
+
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <label for="direccionField">Dirección:</label>
+                        <textarea type="email" id="addressField" placeholder="Escriba su dirección de residencia..."
+                            class="form-control" rows="5" required></textarea>
+
+
+
+                    </div>
+
+
+                    <div class="form-group mt-3">
+                        <label for="">Selecciona tu foto de perfil</label>
+                        <input required id="imgField" type="file" class="form-control">
+
+
+
+                    </div>
+
+
+
+                </div>
+
+                <div class="col-md-6">
+                    <!--Segunda col -->
+                    <h3>Información Profesional</h3>
+
+                    <div class="form-group mt-2">
+                        <label for="educationField">Educación:</label>
+                        <input required type="text" id="educationField"
+                            placeholder="Ej: universidad, escuela, colegio..." class="form-control" required>
+
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label for="workField">Empleos:</label>
+                        <input required type="text" id="workField"
+                            placeholder="Ej: experiencia laboral, años de experienca..." class="form-control" required>
+
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label for="skillsField">Skills:</label>
+                        <input required type="text" id="skillsField" placeholder="Ej: habilidades, proyectos..."
+                            class="form-control" required>
+                    </div>
+
+
+                    <div class="form-group mt-2">
+                        <label for="pagField">Página Web:</label>
+                        <input required type="url" id="pagField" placeholder="Ej: nombre o enlace de la pagina web..."
+                            class="form-control" required>
+
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label for="cerField">Certificación:</label>
+                        <input required type="text" id="cerField" placeholder="Ej: bachiller, reconocimientos..."
+                            class="form-control" required>
+
+                    </div>
+
+
+                    <div class="form-group mt-3">
+                        <label for="resumeField">Resumen:</label>
+                        <textarea required type="text" id="resumeField"
+                            placeholder="Ej: Alguna información extra que quiera transmitir..." class="form-control"
+                            rows="3" required></textarea>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container text-center mt-4">
+                <button type="submit" id="btn" onclick="generarCV()" class="btn btn-dark btn-lg">Generar CV</button>
+            </div>
+
+        </div>
+
+
+
+
+        <!--COLUMNA IZQUIERDA-->
+
+        <div class="container" id="cv-template">
+
+            <div class="row">
+                <div class="col-md-4 text-center py-5 background">
+                    <!-- primera col -->
+                    <p id="nameT1" class="text-center" style="font-weight: 980; color: white;">Joel Javier Matos Santana
+                    </p>
+                    <!--IMAGEN DE PERFIL-->
+                    <img src="https://www.pngitem.com/pimgs/m/35-350426_profile-icon-png-default-profile-picture-png-transparent.png"
+                        alt="Default profile icon" class="img-fluid myimg" id="imgTemplate" />
+
+                    <h1 style="font-weight: 30; color: rgb(255, 255, 255);">Contacto:</h1>
+                    <hr style="color: white;" />
+
+
+                    <div class="container">
+                        <!--DATOS PERSONALES-->
+                        <h5 style="color: white">tel/cell:</h5>
+                        <p id="contactT" style="color: white">+18294015077</p>
+                        <h5 style="color: white">Dirección:</h5>
+                        <p id="addressT" style="color: white">Calle 1era #5 isabel 2da</p>
+                        <h5 style="color: white">Correo:</h5>
+                        <p id="mailT" style="color: white">correo</p>
+                    </div>
+
+                    <h1 style="font-weight: 30; color: rgb(255, 255, 255);">Idiomas:</h1>
+                    <hr style="color: white;" />
+                    <p id="langT" style="color: white">lenguajes</p>
+
+
+
+
+                </div>
+
+                <div class="col-md-8 py-5">
+                    <!--Segunda col-->
+
+
+
+                    <!-- Educacion -->
+
+                    <div class="mt-4">
+                        <div class="">
+                            <h3 class="color" style="font-weight: 980">Educación</h3>
+                            <hr />
+                        </div>
+                        <div class="card-body">
+                            <p id="educacionT">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Magnam obcaecati eos hic, optio velit doloremque
+                                pariatur tempora dignissimos maiores facere necessitatibus
+                            </p>
+                        </div>
+                    </div>
+
+                    <!--Experiencia laboral(Empleos)-->
+
+                    <div class="mt-4">
+                        <div class="">
+                            <h3 class="color" style="font-weight: 980">Empleos</h3>
+                            <hr />
+                        </div>
+                        <div class="card-body">
+                            <p>
+                            <ul>
+                                <li id="elT">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </li>
+                            </ul>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!--Skills-->
+
+                    <div class="mt-4">
+                        <div class="">
+                            <h3 class="color" style="font-weight: 980">Skills</h3>
+                            <hr />
+                        </div>
+
+                        <div class="card-body">
+                            <p>
+                            <ul>
+                                <li id="skillsT">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </li>
+                            </ul>
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!--Pagina web-->
+
+                    <div class="mt-4">
+                        <div class="">
+                            <h3 class="color" style="font-weight: 980">Pagina Web</h3>
+                            <hr />
+                        </div>
+                        <div class="card-body">
+                            <p id="paginaT">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Magnam obcaecati eos hic, optio velit doloremque
+                                pariatur tempora dignissimos maiores facere necessitatibus
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <!--Certificaciones-->
+
+                    <div class="mt-4">
+                        <div class="">
+                            <h3 class="color" style="font-weight: 980">Certificaciones</h3>
+                            <hr />
+                        </div>
+                        <div class="card-body">
+                            <p id="certificadoT">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Magnam obcaecati eos hic, optio velit doloremque
+                                pariatur tempora dignissimos maiores facere necessitatibus
+                            </p>
+                        </div>
+                    </div>
+
+                    <!--Resumen-->
+
+                    <div class="mt-4">
+                        <div class="">
+                            <h3 class="color" style="font-weight: 980">Resumen</h3>
+                            <hr />
+                        </div>
+                        <div class="card-body">
+                            <p id="resumenT">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Magnam obcaecati eos hic, optio velit doloremque
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="container mt-3 text-center">
+                        <button onclick="imprimirCV()" class="btn btn-dark">
+                            Imprimir CV
+                        </button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+            crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </body>
+</form>
+
+</html>
